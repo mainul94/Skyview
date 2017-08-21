@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $this->schemaCreateStartWith($table);
+            $this->schemaCreateEndWith($table);
         });
     }
 
