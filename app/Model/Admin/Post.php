@@ -4,7 +4,7 @@ namespace App\Model\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Post extends Model
 {
     //
 }
