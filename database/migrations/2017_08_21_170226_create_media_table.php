@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateMediaTable extends Migration
 {
+    use Database\ExtendedBlueprint;
     /**
      * Run the migrations.
      *
@@ -14,8 +15,18 @@ class CreateMediaTable extends Migration
     public function up()
     {
         Schema::create('media', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $this->schemaCreateStartWith($table);
+            $table->string('file_name');
+            $table->string('url');
+            $table->string('thumbnail_url')->nullable();
+            $table->string('preview_rul')->nullable();
+            $table->string('file_type');
+            $table->string('file_size');
+            $table->string('file_dimension')->nullable();
+            $table->text('caption')->nullable();
+            $table->string('alt')->nullable();
+            $table->text('description')->nullable();
+            $this->schemaCreateEndWith($table);
         });
     }
 
