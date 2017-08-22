@@ -16,7 +16,7 @@ class CreateTagablesRelatinalTable extends Migration
         Schema::create('taggables', function (Blueprint $table) {
             $table->unsignedInteger('tag_id');
             $table->unsignedInteger('taggable_id');
-            $table->string('taggable_type');
+            $table->string('taggable_type',191);
             $table->primary(['tag_id', 'taggable_id','taggable_type']);
         });
     }
