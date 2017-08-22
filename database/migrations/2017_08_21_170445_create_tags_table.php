@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTagsTable extends Migration
 {
+    use Database\ExtendedBlueprint;
     /**
      * Run the migrations.
      *
@@ -14,8 +15,8 @@ class CreateTagsTable extends Migration
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $this->schemaCreateStartWith($table);
+            $this->schemaCreateEndWith($table);
         });
     }
 
