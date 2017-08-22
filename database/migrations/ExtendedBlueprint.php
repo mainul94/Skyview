@@ -28,7 +28,7 @@ trait ExtendedBlueprint
      */
     public function schemaCreateEndWith(Blueprint $table)
     {
-        $table->unsignedInteger('created_by')->nullable();
+        $table->unsignedInteger('user_id')->nullable();
         $table->unsignedInteger('updated_by')->nullable();
         $table->timestamps();
         $table->softDeletes();
