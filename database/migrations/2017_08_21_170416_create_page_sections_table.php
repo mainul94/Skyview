@@ -20,6 +20,8 @@ class CreatePageSectionsTable extends Migration
             $table->string('model_class')->nullable();
             $table->string('model_id')->nullable();
             $table->string('model_slug')->nullable();
+            $table->string('full_sql')->nullable();
+            $table->string('full_sql_args')->nullable();
             $table->string('order_by')->nullable();
             $table->string('select_cols')->default('*')->nullable();
             $table->string('sql_condition')->nullable();
