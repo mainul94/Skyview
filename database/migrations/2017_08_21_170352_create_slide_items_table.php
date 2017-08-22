@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateSlideItemsTable extends Migration
 {
+    use Database\ExtendedBlueprint;
     /**
      * Run the migrations.
      *
@@ -14,8 +15,14 @@ class CreateSlideItemsTable extends Migration
     public function up()
     {
         Schema::create('slide_items', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $this->schemaCreateStartWith($table);
+            $table->text('caption')->nullable();
+            $table->unsignedInteger('image_id')->nullable();
+            $table->string('color',40)->nullable();
+            $table->string('bg_color',40)->nullable();
+            $table->unsignedInteger('slide_id');
+            $table->text('style')->nullable();
+            $this->schemaCreateEndWith($table);
         });
     }
 

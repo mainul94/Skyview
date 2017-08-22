@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->text('summery')->nullable();
             $table->string('meta_key')->nullable();
             $table->string('meta_description')->nullable();
-            $table->unsignedInteger('template');
+            $table->unsignedInteger('template_id');
             $table->unsignedInteger('thumbnail')->nullable();
             $table->unsignedInteger('slide_id')->nullable();
             $table->enum('status', ['Published'=>'Published', 'Unpublished'=>'Unpublished'])->default('Published');
