@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCommentsTable extends Migration
 {
+    use Database\ExtendedBlueprint;
     /**
      * Run the migrations.
      *
@@ -15,7 +16,12 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('title')->nullable();
+            $table->string('slug',191)->unique();
+            $table->text('body');
+            $table->string('commentable_type');
+            $table->unsignedInteger('commentable_id');
+            $this->schemaCreateEndWith($table);
         });
     }
 
