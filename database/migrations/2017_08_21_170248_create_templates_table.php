@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTemplatesTable extends Migration
 {
+    use Database\ExtendedBlueprint;
     /**
      * Run the migrations.
      *
@@ -14,8 +15,12 @@ class CreateTemplatesTable extends Migration
     public function up()
     {
         Schema::create('templates', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $this->schemaCreateStartWith($table);
+            $table->enum('type', ['Custom'=>'Custom', 'Standard'=>'Standard'])->default('Custom');
+            $table->string('path')->nullable();
+            $table->longText('html')->nullable();
+            $table->enum('status', [0,1])->default(1);
+            $this->schemaCreateEndWith($table);
         });
     }
 
