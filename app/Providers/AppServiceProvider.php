@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Model\Admin\Category;
+use App\Observers\CommonObservers;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Set Observe for Models
+        Category::observe(CommonObservers::class);
     }
 
     /**
