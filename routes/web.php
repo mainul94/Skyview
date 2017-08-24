@@ -19,3 +19,10 @@ Route::get('category', 'Admin\CategoriesController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::namespace('Admin')->prefix('admin')->group(function () {
+    Route::get('/', function () {
+       return view('admin.base');
+    });
+});
