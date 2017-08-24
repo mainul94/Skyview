@@ -17,7 +17,13 @@
 {{--Main Wrapper--}}
 <div id="app" class="wrapper">
     {{--Start main Header--}}
-    <header class="main-header"></header>
+    <header class="main-header">
+        <a href="home_page" class="logo">
+            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-lg"><b>Admin</b>LTE</span>
+        </a>
+        <layout-top-nav></layout-top-nav>
+    </header>
     {{--Start Sidebar wrapper--}}
     <aside class="sidebar-wrapper">
 
