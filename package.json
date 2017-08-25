@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "admin-lte-sass": "^2.3.2",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "vue-router": "^2.7.0"
   }
 }
