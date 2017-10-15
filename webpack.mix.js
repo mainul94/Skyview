@@ -16,3 +16,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 mix.js('resources/assets/js/admin_layout.js', 'public/js')
    .sass('resources/assets/sass/admin_layout.scss', 'public/css');
+
+// mix.js('resources/assets/js/main.js', 'public/js');

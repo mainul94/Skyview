@@ -15,14 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('category', 'Admin\CategoriesController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('ajax-login', 'Auth\\LoginController@authenticate');
+
+
+Route::namespace('Admin')->prefix('admin/hidden')->group(function () {
+    Route::get('bootinfo', 'Boot@get_bootinfo');
+});
 
 Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('/', function () {
+    Route::get('/{first?}/{second?}/{third?}/{fourth?}/{fifth?}', function () {
        return view('admin.base');
     });
 });
